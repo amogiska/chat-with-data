@@ -98,8 +98,6 @@ For a taxi trips table:
 - 7 day-of-week embeddings
 - 186 neighborhood embeddings
 
-**Cost**: ~$0.05 (vs $4+ for per-row embeddings)
-
 **Query**: "routes with high tips"
 
 **Result**:
@@ -133,40 +131,9 @@ MAX_DIMENSION_PAIRS=10
 EMBEDDINGS_TABLE=aggregate_embeddings
 ```
 
-## Project Structure
-
-```
-chat-with-data/
-├── config.py                  # Configuration
-├── clickhouse_client.py       # Database connection
-├── main.py                    # Generate embeddings
-├── query_embeddings.py        # Search embeddings
-├── pipeline.py                # Orchestration
-└── core/
-    ├── schema_introspector.py # Discover table structure
-    ├── dimension_detector.py  # Classify columns
-    ├── aggregation_generator.py # Generate SQL
-    ├── text_generator.py       # Natural language
-    ├── embedding_generator.py  # OpenAI API
-    └── storage_manager.py      # ClickHouse storage
-```
-
 ## Requirements
 
 - Python 3.9+
 - ClickHouse with system tables access
 - OpenAI API key
 
-## Cost
-
-| Aggregations | Model | Cost |
-|-------------|-------|------|
-| 1,000 | text-embedding-3-small | $0.002 |
-| 10,000 | text-embedding-3-small | $0.02 |
-| 1,000 | text-embedding-3-large | $0.013 |
-
-Always run `--dry-run` first to see estimates.
-
-## License
-
-MIT
