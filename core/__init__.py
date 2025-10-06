@@ -1,5 +1,3 @@
-"""Core components for the embedding pipeline."""
-
 from .schema_introspector import SchemaIntrospector
 from .dimension_detector import DimensionDetector
 from .aggregation_generator import AggregationGenerator
@@ -15,5 +13,3 @@ __all__ = [
     'EmbeddingGenerator',
     'StorageManager',
 ]
-
-
