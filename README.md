@@ -21,14 +21,7 @@ pip install -r requirements.txt
 
 ### Configure credentials
 
-Add to `~/.zshrc`:
-```bash
-export CLICKHOUSE_HOST="your_host.clickhouse.cloud"
-export CLICKHOUSE_PASSWORD="your_password"
-export OPENAI_API_KEY="your_openai_key"
-```
-
-Or create `.env`:
+create `.env`:
 ```
 CLICKHOUSE_HOST=your_host.clickhouse.cloud
 CLICKHOUSE_PASSWORD=your_password
@@ -36,6 +29,7 @@ OPENAI_API_KEY=your_openai_key
 ```
 
 ### Test connection
+
 ```bash
 python main.py --test-connection
 ```
